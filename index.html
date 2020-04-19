@@ -3,41 +3,13 @@
 <head>
 	<title>Erantha Welikala</title>
 
-	<style>
-
-		/*To make sure canvas cover the entire browser*/
-		body{
-			margin: 0;
-		}
-		canvas{
-			width: 100%;
-			height: 100%;
-		}
-		#info{
-			position: absolute;
-			top: 10px;
-			width: 100%;
-			text-align: center;
-			z-index: 100;
-			display:block;
-		}
-		#info_1{
-			background-color: black;
-			align-items: center;
-			width: 100%;
-		}
-		#footer{
-			position: fixed;
-			bottom: 0;
-			right: 0;
-		}
-
-
-	</style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link 	rel="stylesheet" href="./Styling/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -45,10 +17,13 @@
 		<nav class="navbar navbar-expand-sm bg-dark justify-content-end">
 		  <ul class="navbar-nav">
 			<li class="nav-item">
-			  <a class="nav-link" href="#">About Me</a>
+			  <a class="nav-link" href="#">Home</a>
 			</li>
 			<li class="nav-item">
-			  <a class="nav-link" href="#">Projects</a>
+			  <a class="nav-link" href="./aboutMe.html">About Me</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="./projects.html">Projects</a>
 			</li>
 			<li class="nav-item">
 			  <div class="dropdown">
@@ -56,9 +31,9 @@
 					Languages
 				  </button>
 				  <div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Angular</a>
-					<a class="dropdown-item" href="#">ReactJS</a>
-					<a class="dropdown-item" href="#">NodeJS</a>
+					<a class="dropdown-item" href="./languages/angular.html">Angular</a>
+					<a class="dropdown-item" href="./languages/react.html">ReactJS</a>
+					<a class="dropdown-item" href="./languages/nodejs.html">NodeJS</a>
 				  </div>
 				</div>
 			</li>
