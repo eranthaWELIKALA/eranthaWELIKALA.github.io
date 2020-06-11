@@ -294,6 +294,34 @@ ReactDOM.render(<App />, document.getElementById("root"));
               </xmp>
             </li>
           </ul>
+
+
+          <h3 id="image_loader">File loader and CSS loader</h3>
+          <ul>
+            <li>
+              First, you need to install the two loaders(file-loader, url-loader). e.g. $ npm install --save file-loader url-loader
+            </li>
+            <li>
+              If you want to support the css. Make sure you install the style loaders. e.g., $ npm install --save style-loader css-loader
+            </li>
+            <li>
+              Next, you update the webpack config, check below example
+              <xmp style="background-color: lightgray;">
+                module: {
+                  loaders: [{
+                    test: /.jsx?$/,
+                    loader: 'babel-loader',
+                    exclude: /node_modules/
+                  }, {
+                    test: /\.css$/,
+                    loader: "style-loader!css-loader"
+                  }, {
+                    test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+                    loader: 'url-loader?limit=100000' }]
+                },
+              </xmp>
+            </li>
+          </ul>
         </div>
 
     </body>
