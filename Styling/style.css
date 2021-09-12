@@ -13,11 +13,6 @@ canvas{
     z-index: 100;
     display:block;
 }
-#info_1{
-    background-color: black;
-    align-items: center;
-    width: 100%;
-}
 #footer{
     position: fixed;
     bottom: 0;
