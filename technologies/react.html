@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ReactJS</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div>
+          <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-end">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./aboutMe.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../projects/">Projects</a>
+                </li>                
+                <li class="nav-item">
+                  <a class="nav-link" href="./">Technologies/ Languages</a>
+              </li>
+                </ul>
+            </div>		  
+          </nav>
+        </div>
+        <div class="container-fluid">
+          <div class="container-fluid">
+            <div class="row">
+              <h1>React</h1>
+              <img src="../assets/reactjs.png" style="width: 50px; height: 50px;margin-left: 1rem;">
+            </div>
+          </div>
+          <p>A javascript library/ framework</p>
+  
+          <h4>Where/ for what can we use React?</h4>
+          <p>Splitting view into multiple web components with javascripts.</p>
+          <p>Library for creating user interfacces</p>
+  
+          <h4>Differnce between React and Angular</h4>
+  
+          <p>ReactJS is a library for creating UI Angular is more than that which allows you to create signle page application.
+          Angular out of the box has a router, support form validation. Control complete user expreances. React can be extend to build single page applications.
+          But you need to import some extra packages. Because core reactJS is more about building views and part of views.</p>
+  
+          <h2>Building a workspace of ReactJS</h2>
+  
+          <h3 id="create">Create React App</h3>
+  
+          npx create-react-app my-app
+          cd my-app
+          npm start
+  
+          <ul>
+            <li>
+              Create React App doesn’t handle backend logic or databases
+            </li>
+            <li>
+              It just creates a frontend build pipeline
+            </li>
+            <li>
+              You can use it with any backend you want.
+            </li>
+            <li>
+              Under the hood, it uses Babel and webpack
+            </li>
+          </ul>
+  
+          <h3 id="create_scratch">Create React App from scratch</h3>
+          <ul>
+            <li>
+              Create a new directory for your React app
+            </li>
+            <li>
+              Initialize your project with "npm init"
+              <ul>
+                <li>
+                  Optional: Run "git init"
+                </li>
+              </ul>
+            </li>
+            <li>
+              In your new project folder, create the following structure
+              <div class="container-fluid" style="font-style: italic; margin: 2rem; margin-top: 0;">
+                +-- public<br>
+                +-- src
+              </div>
+            </li>
+            <li>
+              Create .gitignore and add "node_modules" and "dist".
+            </li>
+            <li>
+              Create index.html in the public folder(Where static assets are handled)
+            </li>
+            <li>
+              Here is a template.
+              <div class="container-fluid" style="font-style: italic; margin: 2rem; margin-top: 0;">
+                <xmp style="background-color: lightgray;">
+                  <!-- sourced from https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html -->
+                  <!DOCTYPE html>
+                  <html>
+  
+                  <head>
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <title>React Starter</title>
+                  </head>
+  
+                  <body>
+                    <div id="root"></div>
+                    <noscript>
+                      You need to enable JavaScript to run this app.
+                    </noscript>
+                    <!--Build script-->
+                    <script src="../dist/bundle.js"></script>
+                  </body>
+  
+                  </html>
+                </xmp>
+              </div>
+            </li>
+            <h4>Babel</h4>
+            <li>
+              Adding Babel to make sure the code we write can be compiled.
+            </li>
+            <li>
+              npm install --save-dev @babel/core@7.1.0 @babel/cli@7.1.0 @babel/preset-env@7.1.0 @babel/preset-react@7.0.0
+              <ul>
+                <li>
+                  babel-core is the main babel package, we need this for babel to any transformations on our code.
+                </li>
+                <li>
+                  babel-cli allows you to compile files from the command line.
+                </li>
+                <li>
+                  preset-react and preset-env are both presets that transform specific flavors of code.
+                  <ul>
+                    <li>
+                      The env preset allows us to transform ES6+ into more traditional javascript.
+                    </li>
+                    <li>
+                      The react preset does the same, but with JSX instead.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  In the project root, create a file called ".babelrc".<br>
+                  Here, we’re telling babel that we’re going to use the env and react presets.
+                  <pre style="background-color: lightgray;">
+                    <code>
+  {
+      "presets": ["@babel/env", "@babel/preset-react"]
+  }
+                    </code>
+                  </pre>
+                </li>
+              </ul>
+            </li>
+            <h4>
+              Webpack
+            </h4>
+            <li>
+              Acquiring and configuring Webpack and want to save these as dev dependencies.
+            </li>
+            <li>
+              npm install --save-dev webpack@4.19.1 webpack-cli@3.1.1 webpack-dev-server@3.1.8 style-loader@0.23.0 css-loader@1.0.0 babel-loader@8.0.2
+            </li>
+            <li>
+              Create a new file at the root of the project called "webpack.config.js".
+              <pre style="background-color: lightgray;">
+                <code>
+  const path = require("path");
+  const webpack = require("webpack");
+  
+  module.exports = {
+    entry: "./src/index.js",
+    mode: "development",
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: "babel-loader",
+          options: { presets: ["@babel/env"] }
+        },
+        {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader"]
+        }
+      ]
+    },
+    resolve: { extensions: ["*", ".js", ".jsx"] },
+    output: {
+      path: path.resolve(__dirname, "dist/"),
+      publicPath: "/dist/",
+      filename: "bundle.js"
+    },
+    devServer: {
+      contentBase: path.join(__dirname, "public/"),
+      port: 3000,
+      publicPath: "http://localhost:3000/dist/",
+      hotOnly: true
+    },
+    plugins: [new webpack.HotModuleReplacementPlugin()]
+  };
+                </code>
+              </pre>
+              <ul>
+                <li>
+                  "entry" tells Webpack where our application starts and where to start bundling our files.
+                </li>
+                <li>
+                  "mode" lets webpack know we’re working in development mode.
+                  <ul>
+                    <li>This saves us from having to add a mode flag when we run the development server.</li>
+                  </ul>
+                </li>
+                <li>
+                  "module" object helps define how your exported javascript modules are transformed and which ones are included according to the given array of "rules".
+                  <ul>
+                    <li>
+                      "rules"
+                      <ul>
+                        <li>
+                          Our first rule is all about transforming our ES6 and JSX syntax.
+                          The test and exclude properties are conditions to match file against. 
+                          In this case, it’ll match anything outside of the node_modules and bower_components directories. 
+                          Since we’ll be transforming our .js and .jsx files as well, we’ll need to direct Webpack to use Babel. 
+                          Finally, we specify that we want to use the env preset in <a href="https://webpack.js.org/configuration/module/">options</a>
+                        </li>
+                        <li>
+                          The next rule is for processing CSS. 
+                          Since we’re not pre-or-post-processing our CSS, 
+                          we just need to make sure to add style-loader and css-loader to the use property. 
+                          css-loader requires style-loader in order to work. loader is a shorthand for the use property, 
+                          when only one loader is being utilized.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  The resolve property allows us to specify which extensions Webpack will resolve — this allows us to import modules without needing to add their extensions.
+                </li>
+                <li>
+                  The output property tells Webpack where to put our bundled code. The publicPath property specifies what directory the bundle should go in, and also tells webpack-dev-server where to serve files from.
+                  <ul>
+                    <li>
+                      The publicPath property is a special property that helps us with our dev-server. It specifies the public URL of the the directory — at least as far as webpack-dev-server will know or care. If this is set incorrectly, you’ll get 404’s as the server won’t be serving your files from the correct location!
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  We set up webpack-dev-server in the devServer property. This doesn’t require much for our needs — just the location we’re serving static files from (such as our index.html) and the port we want to run the server on. Note that devServer also has a publicPath property. This publicPath tells the server where our bundled code actually is.
+                </li>
+              </ul>
+            </li>
+            <h4>React</h4>
+            <li>Create a file called index.js in your src directory.
+              <xmp style="background-color: lightgray;">
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.js";
+ReactDOM.render(<App />, document.getElementById("root"));
+              </xmp>
+            </li>
+            <li>
+              Now, create another file in src called App.js.
+              <xmp style="background-color: lightgray;">  
+  import React, { Component} from "react";
+  import "./App.css";
+  
+  class App extends Component{
+    render(){
+      return(
+        <div className="App">
+          <h1> Hello, World! </h1>
+        </div>
+      );
+    }
+  }
+  
+  export default App;          
+              </xmp>
+            </li>
+          </ul>
+
+
+          <h3 id="image_loader">File loader and CSS loader</h3>
+          <ul>
+            <li>
+              First, you need to install the two loaders(file-loader, url-loader). e.g. $ npm install --save file-loader url-loader
+            </li>
+            <li>
+              If you want to support the css. Make sure you install the style loaders. e.g., $ npm install --save style-loader css-loader
+            </li>
+            <li>
+              Next, you update the webpack config, check below example
+              <xmp style="background-color: lightgray;">
+                module: {
+                  loaders: [{
+                    test: /.jsx?$/,
+                    loader: 'babel-loader',
+                    exclude: /node_modules/
+                  }, {
+                    test: /\.css$/,
+                    loader: "style-loader!css-loader"
+                  }, {
+                    test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+                    loader: 'url-loader?limit=100000' }]
+                },
+              </xmp>
+            </li>
+          </ul>
+
+          <h3 id="lifeCycle">Life Cycle of React Component</h3>
+          <img src="../assets/react01.png">
+        </div>
+
+    </body>
+</html>

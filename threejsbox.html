@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Erantha Welikala</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link 	rel="stylesheet" href="./styling/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div id="info">
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-end">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+					  <a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="./aboutMe.html">About Me</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="./projects">Projects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./technologies">Technologies/ Languages</a>
+					</li>
+				  </ul>
+			</div>		  
+		</nav>
+		<div id="info_1">
+			<h1>
+				Erantha Welikala
+			</h1>
+			<h3>
+				Computer Engineer
+			</h3>
+			<h4>
+				Interested in Software development
+			</h4>
+		</div>
+		<div id="footer">
+		<h4 style="color: white;">Faculty of Engineering, University of Peradeniya</h4>
+	</div>
+	</div>
+
+	
+	<script src="js/three.js"></script>
+	<script src="js/OrbitControls.js"></script>
+
+	<script>
+		
+		/*Scene is what you are viewing*/
+		var scene = new THREE.Scene();
+
+		/*User see the world through this*/
+		/*PerspectiveCamera or OrthographicCamera*/
+		/*parameters - Degrees, Ratio of our browser, near Clipping Plane, Far Clipping Plane*/
+		var camera =  new THREE.PerspectiveCamera(75, window.innerWidth/ window.innerHeight, 0.1, 100000);
+
+		var renderer = new THREE.WebGLRenderer();
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		document.body.appendChild(renderer.domElement);
+
+		window.addEventListener('resize', function(){
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+			renderer.setSize(width, height);
+			camera.aspect = width/height;
+			camera.updateProjectionMatrix();
+		});
+
+		/*var effect = new THREE.AnaglyphEffect(renderer);
+		effect.setSize(window.innerWidth, window.innerHeight);*/
+
+
+
+		controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+
+		//create the shape
+		//var geometry = new THREE.BoxGeometry(2, 2, 2);
+		var geometry1 = new THREE.BoxGeometry(10000, 10000, 10000);
+
+		//create a material colour or image texture
+		/*var cubeMaterial = [
+			new THREE.MeshPhongMaterial({color:0xFFFFFF,side:THREE.DoubleSide}),//right side
+			new THREE.MeshPhongMaterial({color:0xFFFFFF,side:THREE.DoubleSide}),//left side
+			new THREE.MeshLambertMaterial({map:new THREE.TextureLoader().load('Images/Era.jpg'),side:THREE.DoubleSide}),//top side
+			new THREE.MeshLambertMaterial({map:new THREE.TextureLoader().load('Images/Era.jpg'),side:THREE.DoubleSide}),//bottom side
+			new THREE.MeshPhongMaterial({map:new THREE.TextureLoader().load('Images/Era.jpg'),side:THREE.DoubleSide}),//front side
+			new THREE.MeshPhongMaterial({map:new THREE.TextureLoader().load('Images/Era.jpg'),side:THREE.DoubleSide})//back side
+		];
+*/
+		var cubeMaterial1 = [
+			new THREE.MeshBasicMaterial({map:new THREE.TextureLoader().load('violentdays_ft.png'),side:THREE.DoubleSide}),//front side
+			new THREE.MeshBasicMaterial({map:new THREE.TextureLoader().load('violentdays_bk.png'),side:THREE.DoubleSide}),//back side
+			new THREE.MeshBasicMaterial({map:new THREE.TextureLoader().load('violentdays_up.png'),side:THREE.DoubleSide}),//top side
+			new THREE.MeshBasicMaterial({map:new THREE.TextureLoader().load('violentdays_dn.png'),side:THREE.DoubleSide}),//bottom side
+			new THREE.MeshBasicMaterial({map:new THREE.TextureLoader().load('violentdays_rt.png'),side:THREE.DoubleSide}),//right side
+			new THREE.MeshBasicMaterial({map:new THREE.TextureLoader().load('violentdays_lf.png'),side:THREE.DoubleSide})//left side
+		];
+		/*var material = new THREE.MeshFaceMaterial(cubeMaterial);
+		var cube= new THREE.Mesh(geometry,material);
+		scene.add(cube);*/
+
+		var material1 = new THREE.MeshFaceMaterial(cubeMaterial1);
+		var cube1= new THREE.Mesh(geometry1,material1);
+		scene.add(cube1);
+
+		camera.position.z=3;
+
+		var ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.8);
+		scene.add(ambientLight);
+
+		//Logic
+		var update = function(){
+
+		};
+
+
+		//draw scene
+		var render = function(){
+
+			renderer.render(scene,camera);
+
+		};
+
+
+		//run game loop(update, render, repeat)
+		var GameLoop = function(){
+
+			requestAnimationFrame(GameLoop);
+
+			update();
+			render();
+		};
+
+		GameLoop();
+
+
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div>
+          <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-end">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./aboutMe.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../projects/">Projects</a>
+                </li>                
+                <li class="nav-item">
+                  <a class="nav-link" href="./">Technologies/ Languages</a>
+              </li>
+                </ul>
+            </div>		  
+          </nav>
+        </div>
+        <div class="container-fluid">
+          <div class="card m-5">
+            <div class="card-header">
+              Angular Configurations
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>
+                  Create Angular Project
+                  <ul>
+                    <li>
+                      ng new project-name
+                    </li>
+                    <li>
+                      ng new project-name --skip-tests (without spec files)
+                    </li>
+                  </ul>
+                </li>
+                
+                <li>
+                  Run Angular Project
+                  <ul>
+                    <li>
+                      ng serve --open
+                    </li>
+                    <li>
+                      ng s -o
+                    </li>
+                    <li>
+                      ng serve --open --aot --prod
+                    </li>
+                  </ul>
+                </li>
+    
+                <li>
+                  Create a component
+                  <ul>
+                    <li>ng g c component_folder/component_name --spec=false --flat=true --skip-tests</li>
+                  </ul>
+                </li>
+    
+                <li>
+                  Create a Module
+                  <ul>
+                    ng g m app-routing --flat=true --module=app
+                  </ul>
+                </li>
+    
+                <li>
+                  Create a Directive
+                  <ul><li>ng g directive directive_name [options]</li></ul>
+                </li>
+    
+                <li>
+                  Create a Service
+                  <ul><li>ng g service service_folder/servce_filename</li></ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card m-5">
+            <div class="card-header">
+              Node Packages
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>
+                  Using "as-split" for spillter which can be dragged
+                  <ul><li>npm i angular-split</li></ul>
+                </li>
+    
+                <li>
+                  Install bootstrap
+                  <ul><li>npm install --save @ng-bootstrap/ng-bootstrap</li></ul>
+                </li>
+    
+                <li>
+                  Install Amexio
+                  <ul><li>npm install amexio-ng-extension@latest --save</li></ul>
+                </li>
+    
+                <li>
+                  Install fontawesome
+                  <ul><li>npm install --save-dev @fortawesome/fontawesome-free</li></ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
