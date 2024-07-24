@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6540b9e8.css",
-    "main.js": "/static/js/main.6cb9597b.js",
+    "main.js": "/static/js/main.39b03e7c.js",
     "static/js/453.bb077e1b.chunk.js": "/static/js/453.bb077e1b.chunk.js",
     "static/media/me.png": "/static/media/me.3e1cdb209e5c638341b4.png",
     "static/media/ims.png": "/static/media/ims.ddfdf17b34efd9693aed.png",
@@ -11,6 +11,7 @@
     "static/media/EranthaWelikala20240520.pdf": "/static/media/EranthaWelikala20240520.e496b4d825cef3959642.pdf",
     "static/media/portfolio.png": "/static/media/portfolio.fbdcbc9c7f8c35e40933.png",
     "static/media/beauty-app.png": "/static/media/beauty-app.c9bb0166b16a1847609a.png",
+    "static/media/git-profile-manager.png": "/static/media/git-profile-manager.916deb10ee4592056cb1.png",
     "static/media/angular.png": "/static/media/angular.98805a83e9bc87278492.png",
     "static/media/smpea.png": "/static/media/smpea.c02fd6f414e1f95c0a52.png",
     "static/media/alt-s3.png": "/static/media/alt-s3.aaa69029674ada4783f3.png",
@@ -33,11 +34,11 @@
     "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
     "main.6540b9e8.css.map": "/static/css/main.6540b9e8.css.map",
-    "main.6cb9597b.js.map": "/static/js/main.6cb9597b.js.map",
+    "main.39b03e7c.js.map": "/static/js/main.39b03e7c.js.map",
     "453.bb077e1b.chunk.js.map": "/static/js/453.bb077e1b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6540b9e8.css",
-    "static/js/main.6cb9597b.js"
+    "static/js/main.39b03e7c.js"
   ]
 }
